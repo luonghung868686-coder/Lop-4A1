@@ -6,101 +6,786 @@
 <title>Lớp 4A1 - Ngôi nhà học tập vui vẻ</title>
 <style>
 :root{--bg:#f5fbff;--surface:#fff;--ink:#19324a;--muted:#60758a;--primary:#2f80ed;--secondary:#ffb703;--pink:#ff6b9a;--mint:#36c7a1;--purple:#8067e8;--line:#dfeaf3;--shadow:0 14px 35px rgba(38,91,128,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,a{font:inherit}a{text-decoration:none;color:inherit}.app{min-height:100vh;background:var(--bg)}
-.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{max-width:1180px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;white-space:nowrap}.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(145deg,#5aa9ff,#8067e8);display:grid;place-items:center;color:white;font-size:24px;box-shadow:0 8px 18px rgba(47,128,237,.25)}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:700}.menu{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap}.menu a{padding:9px 12px;border-radius:12px;font-weight:750;color:#4e6578}.menu a:hover,.menu a.active{background:#eaf4ff;color:var(--primary)}.menu-btn{display:none;border:0;background:#edf6ff;padding:9px 12px;border-radius:12px}
-.hero{max-width:1180px;margin:28px auto 0;padding:0 20px}.hero-box{position:relative;overflow:hidden;border-radius:30px;padding:55px 52px;min-height:350px;background:linear-gradient(135deg,#dff3ff 0%,#fff1d2 52%,#f4eaff 100%);box-shadow:var(--shadow)}.hero-box:before,.hero-box:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.7}.hero-box:before{width:230px;height:230px;background:#a8e8ff;right:-50px;top:-80px}.hero-box:after{width:180px;height:180px;background:#ffd2e4;right:160px;bottom:-100px}.hero-content{position:relative;z-index:2;max-width:700px}.badge{display:inline-flex;padding:7px 12px;border-radius:99px;background:#fff;font-weight:800;color:#6b56c8;box-shadow:0 5px 15px rgba(80,80,120,.08)}h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:18px 0 12px;letter-spacing:-2px}.hero p{font-size:19px;color:#53697c;margin:0 0 26px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:850;cursor:pointer;box-shadow:0 8px 18px rgba(47,128,237,.18)}.btn-primary{background:var(--primary);color:#fff}.btn-light{background:#fff;color:var(--ink)}
-.quick{max-width:1180px;margin:22px auto 0;padding:0 20px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.quick-card{background:var(--surface);border:1px solid var(--line);padding:17px;border-radius:18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 20px rgba(38,91,128,.06);cursor:pointer}.quick-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:#eef7ff}.quick-card strong{display:block}.quick-card span{font-size:12px;color:var(--muted)}
-main{max-width:1180px;margin:35px auto;padding:0 20px}.section{margin:42px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}.section-head h2{margin:0;font-size:28px}.section-head p{margin:5px 0 0;color:var(--muted)}.view{color:var(--primary);font-weight:800;font-size:14px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.subject{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px;min-height:215px;box-shadow:var(--shadow);transform:perspective(900px) rotateX(0);transition:.25s;display:flex;flex-direction:column}.subject:hover{transform:perspective(900px) rotateX(3deg) translateY(-5px);box-shadow:0 22px 45px rgba(38,91,128,.18)}.subject-icon{font-size:36px}.subject h3{margin:13px 0 6px}.subject p{margin:0;color:var(--muted);font-size:13px;line-height:1.5;flex:1}.mini-btn{margin-top:15px;border:0;background:#edf6ff;color:var(--primary);padding:9px 12px;border-radius:11px;font-weight:800;cursor:pointer}.subjects .subject:nth-child(2n){background:linear-gradient(160deg,#fff,#f7f1ff)}.subjects .subject:nth-child(3n){background:linear-gradient(160deg,#fff,#effdf8)}
-.two{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 9px 25px rgba(38,91,128,.07)}.notice{display:flex;gap:13px;padding:13px 0;border-bottom:1px dashed var(--line)}.notice:last-child{border-bottom:0}.dot{width:10px;height:10px;border-radius:50%;background:var(--pink);margin-top:7px;flex:none}.notice strong{font-size:14px}.notice p{margin:4px 0 0;color:var(--muted);font-size:13px}.feature{padding:14px;border-radius:17px;background:#f8fbff;margin-bottom:10px}.feature b{display:block}.feature span{font-size:12px;color:var(--muted)}
-.news-grid,.doc-grid,.game-grid,.honor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.news,.doc,.game,.honor{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 10px 26px rgba(38,91,128,.07)}.cover{height:120px;border-radius:16px;display:grid;place-items:center;font-size:45px;background:linear-gradient(135deg,#dff3ff,#fff0d5);margin-bottom:14px}.news h3,.doc h3,.game h3,.honor h3{margin:0 0 7px}.news p,.doc p,.game p,.honor p{font-size:13px;color:var(--muted);line-height:1.5}.tag{display:inline-block;padding:5px 8px;border-radius:8px;background:#edf6ff;color:var(--primary);font-size:11px;font-weight:800}.game{cursor:pointer;transition:.2s}.game:hover{transform:translateY(-4px)}.game .big{font-size:38px;margin-bottom:10px}.honor{text-align:center}.avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:linear-gradient(145deg,#ffd66b,#ff8ab5);font-size:35px;border:4px solid #fff;box-shadow:0 6px 15px rgba(0,0,0,.08)}.stars{letter-spacing:2px;color:#ffad00}.footer{margin-top:55px;background:#19324a;color:#dceaf4}.footer-inner{max-width:1180px;margin:auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer strong{color:#fff}.footer small{color:#a9bfd0}
-.modal{position:fixed;inset:0;background:rgba(16,35,52,.45);display:none;place-items:center;z-index:50;padding:20px}.modal.open{display:grid}.modal-box{max-width:520px;width:100%;background:#fff;border-radius:24px;padding:25px;box-shadow:0 30px 70px rgba(0,0,0,.22)}.close{float:right;border:0;background:#eef4f8;border-radius:10px;padding:6px 10px;cursor:pointer}.quiz-q{font-size:20px;font-weight:850;margin:20px 0}.answers{display:grid;gap:10px}.answer{border:1px solid var(--line);background:#f8fbff;border-radius:12px;padding:12px;text-align:left;cursor:pointer}.answer:hover{background:#edf6ff}.success{padding:12px;border-radius:12px;background:#e9fbf4;color:#177a5e;font-weight:750;margin-top:12px}
-@media(max-width:900px){.menu{display:none}.menu.open{display:flex;position:absolute;top:72px;left:12px;right:12px;background:#fff;padding:10px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.menu-btn{display:block;margin-left:auto}.quick-grid,.cards{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.news-grid,.doc-grid,.game-grid,.honor-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.nav{padding:10px 14px}.brand small{display:none}.hero-box{padding:36px 25px;border-radius:23px}.hero{padding:0 12px}.quick,main{padding:0 12px}.quick-grid,.cards,.news-grid,.doc-grid,.game-grid,.honor-grid{grid-template-columns:1fr}.section{margin:32px 0}h1{letter-spacing:-1px}.hero p{font-size:16px}.section-head{align-items:start;flex-direction:column}.menu.open{top:65px}.menu a{display:block}}
-.admin-link{background:#19324a!important;color:#fff!important;border-radius:12px!important}.admin-screen{position:fixed;inset:0;background:#f5fbff;z-index:100;display:none;overflow:auto}.admin-screen.open{display:block}.admin-top{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px}.admin-wrap{max-width:1180px;margin:auto;padding:24px 20px}.admin-layout{display:grid;grid-template-columns:220px 1fr;gap:18px}.admin-side,.admin-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 22px rgba(38,91,128,.07)}.admin-side{padding:10px;height:max-content}.admin-tab{width:100%;border:0;background:transparent;text-align:left;padding:12px;border-radius:11px;font-weight:800;cursor:pointer}.admin-tab.active,.admin-tab:hover{background:#edf6ff;color:var(--primary)}.admin-card{padding:20px}.admin-card h2{margin-top:0}.admin-toolbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:15px}.admin-form{display:grid;gap:11px}.admin-form input,.admin-form textarea,.admin-form select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;font:inherit}.admin-form textarea{min-height:90px;resize:vertical}.admin-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-list{display:grid;gap:9px;margin-top:16px}.admin-item{border:1px solid var(--line);border-radius:13px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.admin-actions{display:flex;gap:7px;flex-wrap:wrap}.admin-actions button{border:0;border-radius:9px;padding:8px 10px;cursor:pointer;font-weight:750}.edit-btn{background:#edf6ff;color:#246dbf}.delete-btn{background:#fff0f0;color:#b34a4a}.admin-note{padding:11px;border-radius:11px;background:#fff8df;color:#785d00;font-size:13px;margin-bottom:15px}.login-box{max-width:430px;margin:9vh auto;padding:28px;background:#fff;border-radius:24px;box-shadow:0 25px 60px rgba(38,91,128,.18)}.login-box h1{font-size:34px;letter-spacing:-1px}.admin-error{display:none;padding:10px;border-radius:10px;background:#fff0f0;color:#b34a4a;font-weight:700}.admin-error.show{display:block}.admin-public{display:none}
-@media(max-width:800px){.admin-layout{grid-template-columns:1fr}.admin-row{grid-template-columns:1fr}}
-.resource-list{display:grid;gap:6px;margin-top:12px}.resource-link{display:block;padding:8px 9px;border-radius:9px;background:#f2f7fc;color:var(--primary);font-size:12px;font-weight:800}.resource-link:hover{background:#e6f1fb}.subject{min-height:230px}.hero-actions .btn-light{border:1px solid #e2eaf1}.admin-link{background:#245d96!important}.menu a.active{color:#245d96;background:#edf5fc}.hero-box{background:linear-gradient(135deg,#e7f3ff,#fff8e7)}.subjects .subject:nth-child(2n),.subjects .subject:nth-child(3n){background:#fff}
-@media(max-width:600px){.nav{flex-wrap:wrap}.menu.open{position:static;top:auto;left:auto;right:auto;width:100%;order:3;display:flex;flex-direction:column;gap:3px;margin:2px 0 4px;padding:8px}.menu.open a{display:block;width:100%;padding:10px 12px}.menu-btn{margin-left:auto}.hero-box{padding:32px 22px;border-radius:20px}.quick,main{padding-left:12px;padding-right:12px}.quick-grid,.cards,.news-grid,.doc-grid,.game-grid,.honor-grid{grid-template-columns:1fr}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,a{font:inherit}a{text-decoration:none;color:inherit}
+.app{min-height:100vh;background:var(--bg)}
+.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;white-space:nowrap}
+.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(145deg,#5aa9ff,#8067e8);display:grid;place-items:center;color:white;font-size:24px;box-shadow:0 8px 18px rgba(47,128,237,.25)}
+.brand small{display:block;color:var(--muted);font-size:11px;font-weight:700}
+.menu{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap}
+.menu a{padding:9px 12px;border-radius:12px;font-weight:750;color:#4e6578}
+.menu a:hover,.menu a.active{background:#eaf4ff;color:var(--primary)}
+.menu-btn{display:none;border:0;background:#edf6ff;padding:9px 12px;border-radius:12px}
+.hero{max-width:1180px;margin:28px auto 0;padding:0 20px}
+.hero-box{position:relative;overflow:hidden;border-radius:30px;padding:55px 52px;min-height:320px;background:linear-gradient(135deg,#dff3ff 0%,#fff1d2 52%,#f4eaff 100%);box-shadow:var(--shadow)}
+.hero-box:before,.hero-box:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.7}
+.hero-box:before{width:230px;height:230px;background:#a8e8ff;right:-50px;top:-80px}
+.hero-box:after{width:180px;height:180px;background:#ffd2e4;right:160px;bottom:-100px}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.badge{display:inline-flex;padding:7px 12px;border-radius:99px;background:#fff;font-weight:800;color:#6b56c8;box-shadow:0 5px 15px rgba(80,80,120,.08)}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.05;margin:18px 0 12px;letter-spacing:-1.5px}
+.hero p{font-size:18px;color:#53697c;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:850;cursor:pointer;box-shadow:0 8px 18px rgba(47,128,237,.18)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-light{background:#fff;color:var(--ink)}
+.quick{max-width:1180px;margin:22px auto 0;padding:0 20px}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.quick-card{background:var(--surface);border:1px solid var(--line);padding:17px;border-radius:18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 20px rgba(38,91,128,.06);cursor:pointer}
+.quick-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:#eef7ff}
+.quick-card strong{display:block}.quick-card span{font-size:12px;color:var(--muted)}
+main{max-width:1180px;margin:35px auto;padding:0 20px}
+.section{margin:42px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}
+.section-head h2{margin:0;font-size:28px}
+.section-head p{margin:5px 0 0;color:var(--muted)}
+.game-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.game{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 22px rgba(38,91,128,.07);cursor:pointer;transition:.2s;display:flex;flex-direction:column;min-height:160px}
+.game:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(38,91,128,.14)}
+.game .big{font-size:34px;margin-bottom:8px}
+.game h3{margin:0 0 6px;font-size:15.5px}
+.game p{font-size:12.5px;color:var(--muted);line-height:1.45;margin:0;flex:1}
+.game .tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;padding:4px 9px;border-radius:99px;background:#eaf4ff;color:var(--primary)}
+.honor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.honor{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 22px rgba(38,91,128,.07)}
+.honor .avatar{font-size:32px}.honor h3{margin:8px 0 4px}.honor p{font-size:13px;color:var(--muted);margin:4px 0}
+.news-grid,.doc-grid,.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card,.subject{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(38,91,128,.06)}
+.subject h3{margin:10px 0 6px}.subject p{font-size:13px;color:var(--muted);margin:0}
+.mini-btn{margin-top:12px;border:0;background:#edf6ff;color:var(--primary);padding:8px 12px;border-radius:10px;font-weight:800;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(15,30,50,.55);z-index:100;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.modal-box{background:#fff;border-radius:24px;max-width:640px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.25);padding:28px;position:relative}
+.modal-box.wide{max-width:820px}
+.modal-close{position:absolute;top:14px;right:16px;border:0;background:#f0f4f8;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;font-weight:700}
+.modal h2{margin:0 50px 8px 0;font-size:24px}
+.modal .sub{color:var(--muted);margin:0 0 18px;font-size:14px}
+.answers{display:grid;gap:10px;margin-top:14px}
+.answer{border:2px solid var(--line);background:#f8fbff;padding:14px 16px;border-radius:14px;text-align:left;font-weight:700;cursor:pointer;transition:.15s}
+.answer:hover{border-color:var(--primary);background:#eaf4ff}
+.answer.correct{border-color:#22c55e;background:#dcfce7}
+.answer.wrong{border-color:#ef4444;background:#fee2e2}
+.success{margin-top:12px;padding:12px;border-radius:12px;background:#dcfce7;color:#166534;font-weight:700}
+.fail{margin-top:12px;padding:12px;border-radius:12px;background:#fee2e2;color:#991b1b;font-weight:700}
+.score-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;font-weight:800}
+.score-bar span{background:#edf6ff;padding:6px 12px;border-radius:99px;font-size:13px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn-sm{border:0;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
+.btn-blue{background:var(--primary);color:#fff}
+.btn-gray{background:#edf2f7;color:#334155}
+.btn-green{background:#22c55e;color:#fff}
+.btn-orange{background:#f59e0b;color:#fff}
+.wheel-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.wheel{width:280px;height:280px;border-radius:50%;border:8px solid #1e293b;position:relative;overflow:hidden;transition:transform 4s cubic-bezier(.17,.67,.12,.99)}
+.wheel-slice{position:absolute;width:50%;height:50%;left:50%;top:0;transform-origin:0% 100%;display:flex;align-items:center;justify-content:center}
+.wheel-pointer{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:24px solid #ef4444;margin-bottom:-8px;z-index:2}
+.grid-game{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.cell{aspect-ratio:1;border:0;border-radius:12px;font-size:20px;font-weight:800;cursor:pointer;background:#e0f2fe;transition:.15s}
+.cell:hover{background:#bae6fd}.cell.open{background:#f1f5f9;cursor:default}.cell.mine{background:#fecaca}.cell.safe{background:#bbf7d0}
+.flip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.flip-card{aspect-ratio:1;perspective:600px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;inset:0;border-radius:12px;display:grid;place-items:center;backface-visibility:hidden;font-weight:800;font-size:18px}
+.flip-front{background:linear-gradient(135deg,#60a5fa,#818cf8);color:#fff}
+.flip-back{background:#fff;border:2px solid var(--line);transform:rotateY(180deg);font-size:14px;padding:6px;text-align:center}
+.timer-big{font-size:64px;font-weight:900;text-align:center;margin:20px 0;font-variant-numeric:tabular-nums}
+.timer-bar{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin-bottom:16px}
+.timer-fill{height:100%;background:linear-gradient(90deg,#22c55e,#eab308,#ef4444);transition:width .2s}
+.zombie-area{text-align:center;padding:10px 0}
+.zombie{font-size:70px;transition:transform .3s}
+.zombie.hit{transform:scale(0);opacity:0}
+.letter-box{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.letter{width:42px;height:48px;border:2px dashed #94a3b8;border-radius:10px;display:grid;place-items:center;font-size:22px;font-weight:900;background:#f8fafc}
+.letter.got{border-style:solid;border-color:var(--primary);background:#eaf4ff;color:var(--primary)}
+.flash{min-height:180px;display:grid;place-items:center;background:linear-gradient(135deg,#e0f2fe,#f3e8ff);border-radius:20px;font-size:28px;font-weight:800;padding:24px;text-align:center;cursor:pointer;user-select:none}
+.seq-list{display:flex;flex-direction:column;gap:8px}
+.seq-item{background:#f1f5f9;padding:12px 14px;border-radius:12px;font-weight:700;cursor:grab;border:2px solid transparent}
+.seq-item.dragging{opacity:.5;border-color:var(--primary)}
+@media(max-width:800px){.quick-grid{grid-template-columns:repeat(2,1fr)}.menu{display:none}.menu.open{display:flex;flex-direction:column;position:absolute;top:60px;right:12px;background:#fff;padding:12px;border-radius:16px;box-shadow:var(--shadow);z-index:30}.menu-btn{display:block}.hero-box{padding:36px 24px}.nav{padding:10px 14px}}
+@media(max-width:500px){.game-grid{grid-template-columns:1fr}.flip-grid,.grid-game{grid-template-columns:repeat(3,1fr)}.wheel{width:240px;height:240px}}
+.admin-screen{position:fixed;inset:0;background:#f5fbff;z-index:100;display:none;overflow:auto}
+.admin-screen.open{display:block}
+.admin-top{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.login-box{max-width:400px;margin:10vh auto;padding:28px;background:#fff;border-radius:24px;box-shadow:var(--shadow)}
+.login-box input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;font:inherit}
 </style>
 </head>
 <body>
-<div class="app" id="home">
-<header class="header"><nav class="nav"><a class="brand" href="#home"><span class="logo">🎒</span><span>Lớp 4A1<small>Ngôi nhà học tập vui vẻ</small></span></a><button class="menu-btn" id="menuBtn">☰</button><div class="menu" id="menu"><a class="active" href="#home">Trang chủ</a><a href="#hoclieu">Kho học liệu</a><a href="#tintuc">Tin tức</a><a href="#tailieu">Tài liệu tham khảo</a><a href="#trochoi">Trò chơi</a><a href="#vinhdanh">Vinh danh</a><a class="admin-link" href="#admin" onclick="openAdmin(event)">🔐 Quản trị</a></div></nav></header>
-<section class="hero"><div class="hero-box"><div class="hero-content"><span class="badge">🌟 Xin chào các bạn 4A1!</span><h1>Chào mừng đến với lớp 4A1</h1><p>Cùng học tập - Cùng sáng tạo - Cùng tỏa sáng</p><div class="hero-actions"><a class="btn btn-primary" href="#hoclieu">🚀 Khám phá học liệu</a><a class="btn btn-light" href="#trochoi">🎮 Chơi ngay</a></div></div></div></section>
-<section class="quick"><div class="quick-grid"><a class="quick-card" href="#hoclieu"><span class="quick-icon">📚</span><div><strong>Kho học liệu</strong><span>Học tập mỗi ngày</span></div></a><a class="quick-card" href="#trochoi"><span class="quick-icon">🎮</span><div><strong>Trò chơi</strong><span>Học mà vui</span></div></a><a class="quick-card" href="#tailieu"><span class="quick-icon">📝</span><div><strong>Ôn tập</strong><span>Tài liệu hữu ích</span></div></a><a class="quick-card" href="#vinhdanh"><span class="quick-icon">🏆</span><div><strong>Vinh danh</strong><span>Ngôi sao 4A1</span></div></a></div></section>
-<main><div style="text-align: center; margin: 30px 0;">
-  <a href="https://giaoviendoimoi.com/tug-of-war-game" target="_blank"
-     style="background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);">
-    🎮 Chơi trò chơi: Kéo Co - Đua thuyền kiến thức
-  </a>
+<div class="app">
+<header class="header">
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">🎒</div>
+      <div>Lớp 4A1<small>Ngôi nhà học tập vui vẻ</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home" class="active">Trang chủ</a>
+      <a href="#hoclieu">Kho học liệu</a>
+      <a href="#tintuc">Tin tức</a>
+      <a href="#trochoi">Trò chơi</a>
+      <a href="#vinhdanh">Vinh danh</a>
+      <a href="#" class="admin-link" onclick="openAdmin(event)">Quản trị</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-box">
+    <div class="hero-content">
+      <div class="badge">☀️ Xin chào các bạn 4A1!</div>
+      <h1>Chào mừng đến với lớp 4A1</h1>
+      <p>Cùng học tập - Cùng sáng tạo - Cùng tỏa sáng</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#hoclieu">📚 Khám phá học liệu</a>
+        <a class="btn btn-light" href="#trochoi">🎮 Chơi ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quick">
+  <div class="quick-grid">
+    <div class="quick-card" onclick="location.hash='hoclieu'"><div class="quick-icon">📚</div><div><strong>Kho học liệu</strong><span>Học tập mỗi ngày</span></div></div>
+    <div class="quick-card" onclick="location.hash='trochoi'"><div class="quick-icon">🎮</div><div><strong>Trò chơi</strong><span>Học mà vui</span></div></div>
+    <div class="quick-card" onclick="location.hash='tintuc'"><div class="quick-icon">📢</div><div><strong>Tin tức</strong><span>Cập nhật mới</span></div></div>
+    <div class="quick-card" onclick="location.hash='vinhdanh'"><div class="quick-icon">🏆</div><div><strong>Vinh danh</strong><span>Ngôi sao 4A1</span></div></div>
+  </div>
 </div>
-<section class="section"><div class="section-head"><div><h2>📢 Thông báo mới nhất</h2><p>Cập nhật nhanh những điều quan trọng của lớp.</p></div></div><div class="two"><div class="panel"><div class="notice"><i class="dot"></i><div><strong>Chào mừng tuần học mới!</strong><p>Hãy chuẩn bị đầy đủ sách vở và tinh thần thật vui vẻ nhé.</p></div></div><div class="notice"><i class="dot"></i><div><strong>Thử thách học tập tháng này</strong><p>Mỗi bạn hoàn thành 3 nhiệm vụ sẽ nhận một huy hiệu đặc biệt.</p></div></div><div class="notice"><i class="dot"></i><div><strong>Góc đọc sách 4A1</strong><p>Đừng quên chia sẻ một cuốn sách hay với các bạn trong lớp.</p></div></div></div><div class="panel"><h3>✨ Bài học nổi bật</h3><div class="feature"><b>Toán: Phân số</b><span>Ôn tập bằng sơ đồ và trò chơi</span></div><div class="feature"><b>Tiếng Việt: Từ ngữ và câu</b><span>Luyện tập qua thử thách nhanh</span></div><div class="feature"><b>Khoa học: Năng lượng</b><span>Khám phá thế giới quanh em</span></div></div></div></section>
-<section class="section" id="hoclieu"><div class="section-head"><div><h2>📚 Kho học liệu</h2><p>Chọn môn học và bắt đầu khám phá.</p></div><a class="view" href="#hoclieu">Xem tất cả →</a></div><div class="cards subjects">
-<div class="subject"><span class="subject-icon">➗</span><h3>Toán học</h3><p>Bài giảng, bài tập, phiếu ôn tập và thử thách tư duy.</p><button class="mini-btn" onclick="showMsg('Toán học','Kho học liệu Toán đang sẵn sàng cho bạn!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">📖</span><h3>Tiếng Việt</h3><p>Luyện đọc, chính tả, từ và câu, viết sáng tạo.</p><button class="mini-btn" onclick="showMsg('Tiếng Việt','Hãy cùng khám phá những bài học Tiếng Việt thú vị!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">🇬🇧</span><h3>Tiếng Anh</h3><p>Từ vựng, mẫu câu và hoạt động luyện tập vui nhộn.</p><button class="mini-btn" onclick="showMsg('Tiếng Anh','Let’s learn English together!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">🔬</span><h3>Khoa học</h3><p>Khám phá tự nhiên bằng câu hỏi và hoạt động thực hành.</p><button class="mini-btn" onclick="showMsg('Khoa học','Cùng khám phá những điều kỳ diệu của khoa học!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">🗺️</span><h3>Lịch sử và Địa lí</h3><p>Tìm hiểu quê hương, đất nước và những câu chuyện lịch sử.</p><button class="mini-btn" onclick="showMsg('Lịch sử và Địa lí','Cùng du hành qua không gian và thời gian!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">💻</span><h3>Tin học</h3><p>Kỹ năng số, tư duy máy tính và sử dụng công nghệ an toàn.</p><button class="mini-btn" onclick="showMsg('Tin học','Cùng khám phá thế giới số thật thông minh!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">🌱</span><h3>Hoạt động trải nghiệm</h3><p>Nhiệm vụ sáng tạo, kỹ năng sống và hoạt động tập thể.</p><button class="mini-btn" onclick="showMsg('Hoạt động trải nghiệm','Mỗi ngày một trải nghiệm mới!')">Xem học liệu</button></div>
-<div class="subject"><span class="subject-icon">⭐</span><h3>Góc học sinh</h3><p>Sản phẩm học tập, ý tưởng hay và những điều em muốn chia sẻ.</p><button class="mini-btn" onclick="showMsg('Góc học sinh','Hãy tự tin chia sẻ sản phẩm của em!')">Khám phá</button></div>
-</div></section>
-<section class="section" id="tintuc"><div class="section-head"><div><h2>📰 Tin tức lớp 4A1</h2><p>Những hoạt động đáng nhớ của chúng mình.</p></div></div><div class="news-grid"><article class="news"><div class="cover">🎨</div><span class="tag">Hoạt động</span><h3>Ngày hội sáng tạo của 4A1</h3><p>Các nhóm cùng tạo sản phẩm, thuyết trình và chia sẻ ý tưởng đầy màu sắc.</p></article><article class="news"><div class="cover">🌳</div><span class="tag">Trải nghiệm</span><h3>Góc xanh lớp em</h3><p>4A1 cùng chăm sóc cây xanh và xây dựng không gian học tập thân thiện.</p></article><article class="news"><div class="cover">🏅</div><span class="tag">Thi đua</span><h3>Tuần học tập tích cực</h3><p>Những nỗ lực nhỏ mỗi ngày đã tạo nên một tuần học thật đáng tự hào.</p></article></div></section>
-<section class="section" id="tailieu"><div class="section-head"><div><h2>📝 Tài liệu tham khảo</h2><p>Tài nguyên hỗ trợ học sinh và phụ huynh.</p></div></div><div class="doc-grid"><article class="doc"><div class="cover">📘</div><h3>Ôn tập</h3><p>Phiếu bài tập theo chủ đề, câu hỏi củng cố và bài luyện tập cuối tuần.</p><button class="mini-btn" onclick="showMsg('Tài liệu ôn tập','Đây là khu vực để bổ sung các phiếu ôn tập PDF/Word của lớp.')">Mở thư mục</button></article><article class="doc"><div class="cover">📋</div><h3>Đề kiểm tra</h3><p>Đề kiểm tra tham khảo theo từng môn, có thể cập nhật định kỳ.</p><button class="mini-btn" onclick="showMsg('Đề kiểm tra','Có thể gắn liên kết đến Google Drive hoặc tệp tài liệu tại đây.')">Xem tài liệu</button></article><article class="doc"><div class="cover">👨‍👩‍👧</div><h3>Dành cho phụ huynh</h3><p>Hướng dẫn đồng hành cùng con, lịch học và thông tin cần biết.</p><button class="mini-btn" onclick="showMsg('Góc phụ huynh','Khu vực dành cho thông báo và tài liệu hỗ trợ phụ huynh.')">Xem hướng dẫn</button></article></div></section>
-<section class="section" id="trochoi"><div class="section-head"><div><h2>🎮 Trò chơi học tập</h2><p>Học vui - nhớ lâu - cùng thi đua!</p></div></div><div class="game-grid"><article class="game" onclick="quiz()"><div class="big">➕</div><h3>Đố vui Toán học</h3><p>Trả lời nhanh câu hỏi toán và kiểm tra điểm số.</p></article><article class="game" onclick="showMsg('Ghép chữ Tiếng Việt','Trò chơi mẫu đã sẵn sàng. Có thể phát triển thành trò kéo-thả khi thêm dữ liệu.')"><div class="big">🔤</div><h3>Ghép chữ Tiếng Việt</h3><p>Sắp xếp chữ cái để tạo thành từ đúng.</p></article><article class="game" onclick="showMsg('Ô chữ kiến thức','Chọn hàng ngang và khám phá từ khóa bí mật.')"><div class="big">🧩</div><h3>Ô chữ kiến thức</h3><p>Khám phá từ khóa qua những gợi ý thú vị.</p></article><article class="game" onclick="quiz()"><div class="big">⚡</div><h3>Thử thách nhanh</h3><p>10 giây cho mỗi câu hỏi. Bạn có thể trả lời bao nhiêu?</p></article><article class="game" onclick="showMsg('Vòng quay may mắn','Bạn có thể thay nội dung ô bằng nhiệm vụ, phần thưởng hoặc tên học sinh.')"><div class="big">🎡</div><h3>Vòng quay may mắn</h3><p>Quay để nhận một nhiệm vụ học tập thật vui.</p></article></div></section>
-<section class="section" id="vinhdanh"><div class="section-head"><div><h2>🏆 Vinh danh 4A1</h2><p>Mỗi cố gắng đều xứng đáng được ghi nhận.</p></div></div><div class="honor-grid"><article class="honor"><div class="avatar">👧</div><div class="stars">★★★★★</div><h3>Nguyễn Minh Anh</h3><p><b>Thành tích:</b> Tiến bộ nổi bật môn Tiếng Việt</p><p>“Chúc mừng em! Hãy tiếp tục tự tin tỏa sáng nhé!”</p></article><article class="honor"><div class="avatar">👦</div><div class="stars">★★★★★</div><h3>Trần Gia Bảo</h3><p><b>Thành tích:</b> Giải quyết bài toán tư duy xuất sắc</p><p>“Tuyệt vời! Tinh thần học hỏi của em thật đáng khen.”</p></article><article class="honor"><div class="avatar">👧</div><div class="stars">★★★★★</div><h3>Lê Khánh Linh</h3><p><b>Thành tích:</b> Tích cực tham gia hoạt động trải nghiệm</p><p>“Cảm ơn em vì đã mang năng lượng tích cực đến lớp!”</p></article></div></section>
+
+<main>
+  <section class="section" id="hoclieu">
+    <div class="section-head"><div><h2>📚 Kho học liệu</h2><p>Bài giảng & tài liệu tham khảo</p></div></div>
+    <div class="cards" id="hoclieuList">
+      <div class="subject"><div style="font-size:32px">➗</div><h3>Toán học</h3><p>Bài giảng, bài tập và phiếu ôn tập.</p><button class="mini-btn" onclick="showMsg('Toán học','Giáo viên có thể gắn link Drive / PDF tại đây.')">Mở</button></div>
+      <div class="subject"><div style="font-size:32px">📖</div><h3>Tiếng Việt</h3><p>Luyện đọc, chính tả, từ và câu.</p><button class="mini-btn" onclick="showMsg('Tiếng Việt','Giáo viên có thể gắn link Drive / PDF tại đây.')">Mở</button></div>
+      <div class="subject"><div style="font-size:32px">🇬🇧</div><h3>Tiếng Anh</h3><p>Từ vựng, mẫu câu và luyện tập.</p><button class="mini-btn" onclick="showMsg('Tiếng Anh','Giáo viên có thể gắn link Drive / PDF tại đây.')">Mở</button></div>
+      <div class="subject"><div style="font-size:32px">🔬</div><h3>Khoa học</h3><p>Khám phá thế giới xung quanh.</p><button class="mini-btn" onclick="showMsg('Khoa học','Giáo viên có thể gắn link Drive / PDF tại đây.')">Mở</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="tintuc">
+    <div class="section-head"><div><h2>📢 Thông báo mới nhất</h2><p>Cập nhật nhanh những điều quan trọng của lớp.</p></div></div>
+    <div class="news-grid">
+      <div class="card"><strong>Chào mừng tuần học mới!</strong><p style="color:var(--muted);font-size:13px;margin:8px 0 0">Hãy chuẩn bị đầy đủ sách vở và tinh thần thật vui vẻ.</p></div>
+      <div class="card"><strong>Bài học nổi bật</strong><p style="color:var(--muted);font-size:13px;margin:8px 0 0">Tuần này chúng ta sẽ ôn tập phân số và luyện đọc hiểu.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="trochoi">
+    <div class="section-head">
+      <div>
+        <h2>🎮 Trò chơi học tập</h2>
+        <p>Bấm vào là chơi ngay trên website – không cần chuyển trang!</p>
+      </div>
+    </div>
+    <div class="game-grid">
+      <article class="game" onclick="startQuiz()"><div class="big">➕</div><h3>Đố vui Toán học</h3><p>Trả lời nhanh các câu hỏi toán lớp 4, xem điểm ngay.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startSpeedQuiz()"><div class="big">⚡</div><h3>Thử thách nhanh</h3><p>Mỗi câu 10 giây. Bạn trả lời đúng được bao nhiêu?</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startWheel()"><div class="big">🎡</div><h3>Vòng quay may mắn</h3><p>Quay để nhận nhiệm vụ học tập vui nhộn cho cả lớp.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startMine()"><div class="big">💣</div><h3>Dò Mìn Kiến thức</h3><p>Chọn ô an toàn. Ô mìn sẽ nổ nếu trả lời sai!</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startZombie()"><div class="big">🧟</div><h3>Chặn Zombie</h3><p>Trả lời đúng để bắn hạ zombie trước khi chúng tiến gần.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startFlip()"><div class="big">🧩</div><h3>Lật Mảnh Ghép</h3><p>Lật các thẻ để tìm cặp từ / hình khớp nhau.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startFlash()"><div class="big">📇</div><h3>Thẻ lật học nhóm</h3><p>Lật thẻ để học từ vựng / khái niệm nhanh.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startTreasure()"><div class="big">🗝️</div><h3>Săn Kho Báu</h3><p>Trả lời đúng để thu thập chữ cái và giải mật mã.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startSequence()"><div class="big">🚂</div><h3>Đoàn Tàu Tri Thức</h3><p>Sắp xếp các toa theo đúng thứ tự kiến thức.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startBattle()"><div class="big">⚔️</div><h3>Game Đối Kháng</h3><p>Hai người chơi thay phiên trả lời – ai nhiều điểm hơn thắng.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startTimer()"><div class="big">⏱️</div><h3>Đồng hồ đếm ngược</h3><p>Nhiều kiểu đồng hồ vui để đếm thời gian hoạt động lớp.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startABC()"><div class="big">🏃</div><h3>Thể dục ABC</h3><p>Làm động tác theo chữ cái + trả lời câu hỏi.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startStarRace()"><div class="big">⭐</div><h3>Cuộc đua ngôi sao</h3><p>Chọn A B C D nhanh để lấy sao về cho đội.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="startWordFly()"><div class="big">🔤</div><h3>Từ Ngữ Biết Bay</h3><p>Bấm chọn từ đúng để hoàn thành câu.</p><span class="tag">Chơi ngay</span></article>
+      <article class="game" onclick="showMsg('Quiz Nghiêng Đầu / Chém Hoa Quả','Các trò dùng camera thật (nghiêng đầu, chém hoa quả, chế độ giấy…) cần chạy trên <b>giaoviendoimoi.com</b> vì yêu cầu quyền camera và AI.<br><br>Bạn có thể mở tab mới: <a href=&quot;https://giaoviendoimoi.com/&quot; target=&quot;_blank&quot; style=&quot;color:#2f80ed;font-weight:800&quot;>Mở Giáo viên Đổi mới</a>')"><div class="big">📷</div><h3>Trò camera nâng cao</h3><p>Quiz Nghiêng Đầu, Chém Hoa Quả, Chế độ giấy…</p><span class="tag" style="background:#fef3c7;color:#b45309">Mở ngoài</span></article>
+    </div>
+  </section>
+
+  <section class="section" id="vinhdanh">
+    <div class="section-head"><div><h2>🏆 Vinh danh 4A1</h2><p>Mỗi cố gắng đều xứng đáng được ghi nhận.</p></div></div>
+    <div class="honor-grid">
+      <div class="honor"><div class="avatar">👧</div><div>★★★★★</div><h3>Nguyễn Minh Anh</h3><p><b>Thành tích:</b> Tiến bộ nổi bật môn Tiếng Việt</p></div>
+      <div class="honor"><div class="avatar">👦</div><div>★★★★★</div><h3>Trần Gia Bảo</h3><p><b>Thành tích:</b> Giải quyết bài toán tư duy xuất sắc</p></div>
+      <div class="honor"><div class="avatar">👧</div><div>★★★★★</div><h3>Lê Khánh Linh</h3><p><b>Thành tích:</b> Tích cực tham gia hoạt động trải nghiệm</p></div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="footer-inner"><div><strong>🎒 Lớp 4A1 - Ngôi nhà học tập vui vẻ</strong><br><small>Cùng học tập - Cùng sáng tạo - Cùng tỏa sáng</small></div><small>Website mẫu dành cho lớp học tiểu học • Nội dung có thể chỉnh sửa</small></div></footer>
+
+<footer style="text-align:center;padding:30px;color:var(--muted);font-size:13px">
+  © 2026 Lớp 4A1 – Ngôi nhà học tập vui vẻ
+</footer>
 </div>
-<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">✕</button><h2 id="modalTitle">Thông báo</h2><div id="modalBody"></div></div></div>
-<div class="admin-screen" id="adminScreen"><div id="adminLogin"><div class="login-box"><button class="close" onclick="closeAdmin()">✕</button><div class="badge">🔐 Khu vực giáo viên</div><h1>Đăng nhập Admin</h1><p style="color:#60758a">Chỉ giáo viên có tài khoản quản trị mới được truy cập.</p><form class="admin-form" onsubmit="loginAdmin(event)"><input id="adminUser" autocomplete="username" placeholder="Tên tài khoản" required><input id="adminPass" autocomplete="current-password" type="password" placeholder="Mật khẩu" required><div class="admin-error" id="adminError">Sai tài khoản hoặc mật khẩu.</div><button class="btn btn-primary" type="submit">Đăng nhập</button></form><div class="admin-note" style="margin-top:14px">Demo: tài khoản <b>admin4A1</b> • mật khẩu <b>Lop4A1@2026</b></div></div></div><div id="adminDashboard" style="display:none"><div class="admin-top"><strong>🎒 Bảng điều khiển lớp 4A1</strong><div class="admin-actions"><button class="btn btn-light" onclick="closeAdmin()">Xem website</button><button class="btn btn-primary" onclick="logoutAdmin()">Đăng xuất</button></div></div><div class="admin-wrap"><div class="admin-note">⚠️ Đây là bản demo dùng <b>localStorage</b>. Dữ liệu chỉ lưu trên trình duyệt hiện tại, phù hợp chạy thử; khi dùng chính thức nên kết nối Firebase/Supabase và hệ thống xác thực an toàn.</div><div class="admin-layout"><aside class="admin-side"><button class="admin-tab active" onclick="selectAdminTab('hoclieu',this)">📚 Kho học liệu</button><button class="admin-tab" onclick="selectAdminTab('tintuc',this)">📰 Tin tức</button><button class="admin-tab" onclick="selectAdminTab('tailieu',this)">📝 Tài liệu</button><button class="admin-tab" onclick="selectAdminTab('trochoi',this)">🎮 Trò chơi</button><button class="admin-tab" onclick="selectAdminTab('vinhdanh',this)">🏆 Vinh danh</button></aside><section class="admin-card"><div id="adminContent"></div></section></div></div></div></div>
+
+<div class="modal" id="modal">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h2 id="modalTitle">Tiêu đề</h2>
+    <p class="sub" id="modalSub"></p>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="admin-screen" id="adminScreen">
+  <div class="admin-top">
+    <strong>Quản trị Lớp 4A1</strong>
+    <button class="btn-sm btn-gray" onclick="closeAdmin()">Đóng</button>
+  </div>
+  <div class="login-box" id="loginBox">
+    <h2>Đăng nhập</h2>
+    <input id="u" placeholder="Tên đăng nhập" value="admin4A1">
+    <input id="p" type="password" placeholder="Mật khẩu" value="Lop4A1@2026">
+    <button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="doLogin()">Vào</button>
+    <p style="font-size:12px;color:var(--muted);margin-top:12px">Mặc định: admin4A1 / Lop4A1@2026</p>
+  </div>
+  <div id="dash" style="display:none;max-width:900px;margin:20px auto;padding:0 16px">
+    <p>Chào giáo viên! Hiện tại phần quản trị đang ở chế độ đơn giản. Bạn có thể chỉnh nội dung trực tiếp trong file index.html hoặc mở rộng sau.</p>
+  </div>
+</div>
+
 <script>
-const menu=document.getElementById('menu'), modal=document.getElementById('modal');
+const menu=document.getElementById('menu');
 document.getElementById('menuBtn').onclick=()=>menu.classList.toggle('open');
 document.querySelectorAll('.menu a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
-function showMsg(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML='<p style="color:#60758a;line-height:1.6">'+body+'</p><div class="success">💡 Gợi ý: Giáo viên có thể thay phần này bằng liên kết Google Drive, PDF, video hoặc trò chơi thực tế.</div>';modal.classList.add('open')}
-function closeModal(){modal.classList.remove('open')}
-modal.onclick=e=>{if(e.target===modal)closeModal()}
-function quiz(){document.getElementById('modalTitle').textContent='➗ Đố vui Toán học';document.getElementById('modalBody').innerHTML='<div class="quiz-q">Một lớp có 4 tổ, mỗi tổ có 8 bạn. Lớp có tất cả bao nhiêu bạn?</div><div class="answers"><button class="answer" onclick="answer(false)">A. 24 bạn</button><button class="answer" onclick="answer(true)">B. 32 bạn</button><button class="answer" onclick="answer(false)">C. 36 bạn</button></div><div id="result"></div>';modal.classList.add('open')}
-function answer(ok){document.getElementById('result').innerHTML=ok?'<div class="success">🎉 Chính xác! 4 × 8 = 32. Bạn thật tuyệt!</div>':'<div style="margin-top:12px;padding:12px;border-radius:12px;background:#fff0f0;color:#b34a4a;font-weight:700">💪 Chưa đúng rồi. Hãy thử lại nhé!</div>'}
-const ADMIN_USER='admin4A1',ADMIN_PASS='Lop4A1@2026';
-const seedData={hoclieu:[['Toán học','➗','Bài giảng, bài tập và phiếu ôn tập.'],['Tiếng Việt','📖','Luyện đọc, chính tả, từ và câu.'],['Tiếng Anh','🇬🇧','Từ vựng, mẫu câu và luyện tập.']],tintuc:[['Ngày hội sáng tạo của 4A1','Hoạt động','Các nhóm cùng tạo sản phẩm và chia sẻ ý tưởng.'],['Góc xanh lớp em','Trải nghiệm','Cùng chăm sóc cây xanh trong lớp.']],tailieu:[['Ôn tập','Phiếu bài tập theo chủ đề và bài luyện cuối tuần.'],['Đề kiểm tra','Đề tham khảo theo từng môn.']],trochoi:[['Đố vui Toán học','➕','Trả lời nhanh câu hỏi toán.'],['Ghép chữ Tiếng Việt','🔤','Sắp xếp chữ cái thành từ đúng.']],vinhdanh:[['Nguyễn Minh Anh','Tiến bộ nổi bật môn Tiếng Việt','👧'],['Trần Gia Bảo','Giải quyết bài toán tư duy xuất sắc','👦']]};
-function getData(){let raw=localStorage.getItem('lop4a1Data');if(!raw){localStorage.setItem('lop4a1Data',JSON.stringify(seedData));return JSON.parse(JSON.stringify(seedData))}try{return JSON.parse(raw)}catch(e){localStorage.setItem('lop4a1Data',JSON.stringify(seedData));return JSON.parse(JSON.stringify(seedData))}}
-function saveData(d){localStorage.setItem('lop4a1Data',JSON.stringify(d));renderPublicData(d)}
-function openAdmin(e){if(e)e.preventDefault();document.getElementById('adminScreen').classList.add('open');if(sessionStorage.getItem('lop4a1Admin')==='1')showDashboard();else showLogin()}
-function closeAdmin(){document.getElementById('adminScreen').classList.remove('open');location.hash='home'}
-function showLogin(){document.getElementById('adminLogin').style.display='block';document.getElementById('adminDashboard').style.display='none'}
-function showDashboard(){document.getElementById('adminLogin').style.display='none';document.getElementById('adminDashboard').style.display='block';selectAdminTab('hoclieu',document.querySelector('.admin-tab'))}
-function loginAdmin(e){e.preventDefault();let u=document.getElementById('adminUser').value.trim(),p=document.getElementById('adminPass').value;if(u===ADMIN_USER&&p===ADMIN_PASS){sessionStorage.setItem('lop4a1Admin','1');document.getElementById('adminError').classList.remove('show');showDashboard()}else document.getElementById('adminError').classList.add('show')}
-function logoutAdmin(){sessionStorage.removeItem('lop4a1Admin');showLogin()}
-const labels={hoclieu:['Kho học liệu','Tên môn','Icon','Mô tả'],tintuc:['Tin tức','Tiêu đề','Loại','Nội dung'],tailieu:['Tài liệu tham khảo','Tên tài liệu','Mô tả'],trochoi:['Trò chơi','Tên trò chơi','Icon','Mô tả'],vinhdanh:['Vinh danh','Tên học sinh','Thành tích','Icon']};let currentTab='hoclieu',editIndex=-1;
-function selectAdminTab(tab,el){currentTab=tab;editIndex=-1;document.querySelectorAll('.admin-tab').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');renderAdmin()}
-function renderAdmin(){let d=getData(),l=labels[currentTab],items=d[currentTab]||[];let fields=l.slice(1);let inputs=fields.map((f,i)=>`<${f==='Mô tả'||f==='Nội dung'||f==='Thành tích'?'textarea':'input'} id="af${i}" placeholder="${f}" required>${editIndex>=0?(items[editIndex][i]||''):''}</${f==='Mô tả'||f==='Nội dung'||f==='Thành tích'?'textarea':'input'}>`).join('');let list=items.map((x,i)=>`<div class="admin-item"><div><b>${x[0]}</b><div style="color:#60758a;font-size:12px">${x[1]||''}</div></div><div class="admin-actions"><button class="edit-btn" onclick="editItem(${i})">Sửa</button><button class="delete-btn" onclick="deleteItem(${i})">Xóa</button></div></div>`).join('');document.getElementById('adminContent').innerHTML=`<div class="admin-toolbar"><div><h2>${l[0]}</h2><p style="color:#60758a;margin:0">Thêm, sửa, xóa và lưu nội dung. Dữ liệu lưu xong sẽ hiển thị ngoài website.</p></div><button class="btn btn-light" onclick="cancelEdit()">Làm mới</button></div><form class="admin-form" onsubmit="saveItem(event)">${inputs}<button class="btn btn-primary" type="submit">${editIndex>=0?'💾 Cập nhật':'➕ Thêm mới'}</button></form><div class="admin-list">${list||'<div class="admin-note">Chưa có dữ liệu. Hãy thêm mục đầu tiên.</div>'}</div>`}
-function validateForm(){let d=getData(),fields=labels[currentTab].slice(1);let vals=fields.map((_,i)=>document.getElementById('af'+i).value.trim());if(vals.some(v=>!v))return null;if(vals[0].length<2)return null;return vals}
-function saveItem(e){e.preventDefault();let vals=validateForm();if(!vals){alert('Vui lòng nhập đầy đủ và kiểm tra dữ liệu trước khi lưu.');return}let d=getData();if(editIndex>=0)d[currentTab][editIndex]=vals;else d[currentTab].push(vals);saveData(d);editIndex=-1;renderAdmin()}
-function editItem(i){editIndex=i;renderAdmin();document.getElementById('adminContent').scrollIntoView({behavior:'smooth'})}
-function deleteItem(i){if(!confirm('Bạn có chắc muốn xóa mục này?'))return;let d=getData();d[currentTab].splice(i,1);saveData(d);renderAdmin()}
-function cancelEdit(){editIndex=-1;renderAdmin()}
-function renderPublicData(d){let map={tintuc:'tintuc',tailieu:'tailieu',trochoi:'trochoi',vinhdanh:'vinhdanh'};if(d.tintuc){let el=document.querySelector('#tintuc .news-grid');el.innerHTML=d.tintuc.map(x=>`<article class="news"><div class="cover">📰</div><span class="tag">${x[1]}</span><h3>${x[0]}</h3><p>${x[2]}</p></article>`).join('')}if(d.tailieu){let el=document.querySelector('#tailieu .doc-grid');el.innerHTML=d.tailieu.map(x=>`<article class="doc"><div class="cover">📘</div><h3>${x[0]}</h3><p>${x[1]}</p><button class="mini-btn" onclick="showMsg('Tài liệu','${x[1].replace(/'/g,"\\'")}')">Xem tài liệu</button></article>`).join('')}if(d.trochoi){let el=document.querySelector('#trochoi .game-grid');el.innerHTML=d.trochoi.map(x=>`<article class="game" onclick="showMsg('${x[0]}','${x[2].replace(/'/g,"\\'")}')"><div class="big">${x[1]}</div><h3>${x[0]}</h3><p>${x[2]}</p></article>`).join('')}if(d.vinhdanh){let el=document.querySelector('#vinhdanh .honor-grid');el.innerHTML=d.vinhdanh.map(x=>`<article class="honor"><div class="avatar">${x[2]}</div><div class="stars">★★★★★</div><h3>${x[0]}</h3><p><b>Thành tích:</b> ${x[1]}</p><p>“Chúc mừng em! Hãy tiếp tục tỏa sáng nhé!”</p></article>`).join('')}if(d.hoclieu){let el=document.querySelector('#hoclieu .subjects');if(el)el.querySelectorAll('.subject').forEach((card,i)=>{if(d.hoclieu[i]){card.querySelector('h3').textContent=d.hoclieu[i][0];card.querySelector('.subject-icon').textContent=d.hoclieu[i][1];card.querySelector('p').textContent=d.hoclieu[i][2]}})} }
-const sampleLearningData=[
-{mon:'Toán học',icon:'➗',moTa:'Phân số, phép tính và bài toán có lời văn.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Tiếng Việt',icon:'📖',moTa:'Đọc hiểu, từ và câu, chính tả và viết.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Tiếng Anh',icon:'🇬🇧',moTa:'Từ vựng, mẫu câu và luyện nghe.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Khoa học',icon:'🔬',moTa:'Khám phá tự nhiên và các hiện tượng quanh em.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Lịch sử và Địa lí',icon:'🗺️',moTa:'Quê hương, đất nước, lịch sử và bản đồ.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Tin học',icon:'💻',moTa:'Kỹ năng số và sử dụng máy tính an toàn.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'},
-{mon:'Hoạt động trải nghiệm',icon:'🌱',moTa:'Nhiệm vụ sáng tạo, kỹ năng sống và hoạt động lớp.',video:'https://www.youtube.com/',phieu:'https://drive.google.com/',link:'https://www.google.com/'}
-];
-const originalRenderPublicData=renderPublicData;
-renderPublicData=function(d){originalRenderPublicData(d);document.querySelectorAll('#hoclieu .subject').forEach((card,i)=>{const r=sampleLearningData[i];if(!r)return;card.querySelector('.subject-icon').textContent=r.icon;card.querySelector('h3').textContent=r.mon;card.querySelector('p').textContent=r.moTa;let box=card.querySelector('.resource-list');if(!box){box=document.createElement('div');box.className='resource-list';card.insertBefore(box,card.querySelector('.mini-btn'))}box.innerHTML='<a class="resource-link" href="'+r.video+'" target="_blank" rel="noopener">▶ Video bài học</a><a class="resource-link" href="'+r.phieu+'" target="_blank" rel="noopener">📄 Phiếu bài tập</a><a class="resource-link" href="'+r.link+'" target="_blank" rel="noopener">🔗 Xem trực tuyến</a>'})};
-document.addEventListener('DOMContentLoaded',()=>{renderPublicData(getData());if(location.hash==='#admin')openAdmin()});
-</script>
-</body></html>
 
+const modal=document.getElementById('modal');
+const modalBox=document.getElementById('modalBox');
+function closeModal(){modal.classList.remove('open');stopAllTimers()}
+modal.onclick=e=>{if(e.target===modal)closeModal()};
+function openModal(title,sub=''){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalSub').textContent=sub;
+  modalBox.classList.remove('wide');
+  modal.classList.add('open');
+}
+function showMsg(title,body){
+  openModal(title);
+  document.getElementById('modalBody').innerHTML='<div style="line-height:1.6;color:#475569">'+body+'</div>';
+}
+
+const mathQ=[
+  {q:'Một lớp có 4 tổ, mỗi tổ có 8 bạn. Lớp có tất cả bao nhiêu bạn?',a:['24','32','36','28'],c:1},
+  {q:'Kết quả của 125 + 75 là?',a:['190','200','210','180'],c:1},
+  {q:'1/2 + 1/4 bằng?',a:['1/6','3/4','2/6','1/3'],c:1},
+  {q:'Số lớn nhất trong các số: 3456, 3546, 3654, 3465 là?',a:['3456','3546','3654','3465'],c:2},
+  {q:'Chu vi hình vuông cạnh 9 cm là?',a:['18 cm','27 cm','36 cm','81 cm'],c:2},
+  {q:'15 × 6 = ?',a:['80','90','70','96'],c:1},
+  {q:'Một ngày có bao nhiêu phút?',a:['1440','1200','1000','864'],c:0},
+  {q:'Số liền sau của 2999 là?',a:['3000','2998','3999','2900'],c:0},
+  {q:'Diện tích hình chữ nhật dài 8 cm, rộng 5 cm là?',a:['13 cm²','40 cm²','26 cm²','45 cm²'],c:1},
+  {q:'3/5 của 20 bằng?',a:['10','12','15','8'],c:1}
+];
+
+let quizIdx=0,quizScore=0,quizList=[];
+function startQuiz(){
+  quizList=[...mathQ].sort(()=>Math.random()-0.5).slice(0,6);
+  quizIdx=0;quizScore=0;
+  openModal('➕ Đố vui Toán học','Trả lời đúng để ghi điểm');
+  renderQuiz();
+}
+function renderQuiz(){
+  if(quizIdx>=quizList.length){
+    document.getElementById('modalBody').innerHTML=`
+      <div class="success" style="font-size:18px;text-align:center">🎉 Hoàn thành!<br>Bạn đúng ${quizScore}/${quizList.length} câu</div>
+      <div class="btn-row"><button class="btn-sm btn-blue" onclick="startQuiz()">Chơi lại</button>
+      <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+    return;
+  }
+  const q=quizList[quizIdx];
+  document.getElementById('modalBody').innerHTML=`
+    <div class="score-bar"><span>Câu ${quizIdx+1}/${quizList.length}</span><span>Điểm: ${quizScore}</span></div>
+    <div style="font-size:18px;font-weight:800;margin-bottom:12px">${q.q}</div>
+    <div class="answers" id="ans"></div>`;
+  const box=document.getElementById('ans');
+  q.a.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='answer';
+    b.textContent=String.fromCharCode(65+i)+'. '+t;
+    b.onclick=()=>checkAns(i,q.c,b);
+    box.appendChild(b);
+  });
+}
+function checkAns(i,c,btn){
+  document.querySelectorAll('.answer').forEach(b=>b.onclick=null);
+  if(i===c){btn.classList.add('correct');quizScore++;}
+  else{btn.classList.add('wrong');document.querySelectorAll('.answer')[c].classList.add('correct');}
+  setTimeout(()=>{quizIdx++;renderQuiz()},700);
+}
+
+let speedTimer=null,speedLeft=10;
+function startSpeedQuiz(){
+  quizList=[...mathQ].sort(()=>Math.random()-0.5).slice(0,8);
+  quizIdx=0;quizScore=0;
+  openModal('⚡ Thử thách nhanh','Mỗi câu chỉ có 10 giây!');
+  renderSpeed();
+}
+function renderSpeed(){
+  clearInterval(speedTimer);
+  if(quizIdx>=quizList.length){
+    document.getElementById('modalBody').innerHTML=`
+      <div class="success" style="font-size:18px;text-align:center">Hết giờ thử thách!<br>Đúng ${quizScore}/${quizList.length} câu</div>
+      <div class="btn-row"><button class="btn-sm btn-blue" onclick="startSpeedQuiz()">Chơi lại</button>
+      <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+    return;
+  }
+  speedLeft=10;
+  const q=quizList[quizIdx];
+  document.getElementById('modalBody').innerHTML=`
+    <div class="score-bar"><span>Câu ${quizIdx+1}/${quizList.length}</span><span>Điểm: ${quizScore}</span><span id="tl">⏱ 10s</span></div>
+    <div class="timer-bar"><div class="timer-fill" id="tfill" style="width:100%"></div></div>
+    <div style="font-size:18px;font-weight:800;margin-bottom:12px">${q.q}</div>
+    <div class="answers" id="ans"></div>`;
+  q.a.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='answer';
+    b.textContent=String.fromCharCode(65+i)+'. '+t;
+    b.onclick=()=>{clearInterval(speedTimer);checkSpeed(i,q.c,b)};
+    document.getElementById('ans').appendChild(b);
+  });
+  speedTimer=setInterval(()=>{
+    speedLeft--;
+    document.getElementById('tl').textContent='⏱ '+speedLeft+'s';
+    document.getElementById('tfill').style.width=(speedLeft*10)+'%';
+    if(speedLeft<=0){clearInterval(speedTimer);quizIdx++;renderSpeed()}
+  },1000);
+}
+function checkSpeed(i,c,btn){
+  document.querySelectorAll('.answer').forEach(b=>b.onclick=null);
+  if(i===c){btn.classList.add('correct');quizScore++}else{btn.classList.add('wrong');document.querySelectorAll('.answer')[c].classList.add('correct')}
+  setTimeout(()=>{quizIdx++;renderSpeed()},600);
+}
+
+const wheelItems=['Hát một bài','Kể chuyện 1 phút','Làm 5 câu toán','Nhảy tại chỗ 10 cái','Đọc to 1 đoạn văn','Hỏi bạn 1 câu','Vẽ hình yêu thích','Uống nước & nghỉ','Tuyên dương bạn','Đọc thuộc lòng'];
+function startWheel(){
+  openModal('🎡 Vòng quay may mắn','Bấm Quay để nhận nhiệm vụ');
+  modalBox.classList.add('wide');
+  const colors=['#60a5fa','#f472b6','#34d399','#fbbf24','#a78bfa','#fb7185','#2dd4bf','#f97316','#818cf8','#4ade80'];
+  let html=`<div class="wheel-wrap"><div class="wheel-pointer"></div><div class="wheel" id="wheel">`;
+  wheelItems.forEach((it,i)=>{
+    const rot=i*(360/wheelItems.length);
+    html+=`<div class="wheel-slice" style="transform:rotate(${rot}deg) skewY(${90-360/wheelItems.length}deg);background:${colors[i]}"></div>`;
+  });
+  html+=`</div>
+    <div id="wheelResult" style="font-size:20px;font-weight:800;min-height:32px;text-align:center">Nhấn Quay!</div>
+    <button class="btn-sm btn-blue" id="spinBtn" onclick="spinWheel()">🎯 Quay ngay</button>
+    <div style="font-size:12px;color:#64748b;margin-top:8px;text-align:center">Các nhiệm vụ: ${wheelItems.join(' · ')}</div>
+  </div>`;
+  document.getElementById('modalBody').innerHTML=html;
+}
+let spinning=false;
+function spinWheel(){
+  if(spinning)return;
+  spinning=true;
+  const btn=document.getElementById('spinBtn');
+  btn.disabled=true;
+  const wheel=document.getElementById('wheel');
+  const extra=Math.floor(Math.random()*wheelItems.length);
+  const deg=1800+extra*(360/wheelItems.length);
+  wheel.style.transform=`rotate(${deg}deg)`;
+  setTimeout(()=>{
+    const idx=(wheelItems.length-extra)%wheelItems.length;
+    document.getElementById('wheelResult').textContent='✨ Nhiệm vụ: '+wheelItems[idx];
+    spinning=false;btn.disabled=false;
+  },4200);
+}
+
+function startMine(){
+  openModal('💣 Dò Mìn Kiến thức','Chọn ô. Trả lời đúng để mở an toàn!');
+  const size=12, mines=new Set();
+  while(mines.size<3)mines.add(Math.floor(Math.random()*size));
+  let lives=3,opened=0;
+  document.getElementById('modalBody').innerHTML=`
+    <div class="score-bar"><span id="lives">❤️ ${lives}</span><span id="opened">Đã mở: 0</span></div>
+    <div class="grid-game" id="mineGrid"></div>
+    <p style="font-size:13px;color:#64748b">Có 3 quả mìn ẩn. Trả lời sai hoặc chọn trúng mìn sẽ mất mạng.</p>`;
+  const grid=document.getElementById('mineGrid');
+  for(let i=0;i<size;i++){
+    const b=document.createElement('button');
+    b.className='cell';
+    b.textContent='?';
+    b.onclick=()=>openCell(i,b);
+    grid.appendChild(b);
+  }
+  function openCell(i,b){
+    if(b.classList.contains('open'))return;
+    if(mines.has(i)){
+      b.classList.add('open','mine');b.textContent='💥';
+      lives--;document.getElementById('lives').textContent='❤️ '+lives;
+      if(lives<=0){setTimeout(()=>endMine(false),400);return}
+      return;
+    }
+    const q=mathQ[Math.floor(Math.random()*mathQ.length)];
+    const ans=prompt(q.q+'\n\n'+q.a.map((t,j)=>String.fromCharCode(65+j)+'. '+t).join('\n')+'\n\nNhập A/B/C/D:');
+    if(!ans)return;
+    const choice=ans.trim().toUpperCase().charCodeAt(0)-65;
+    if(choice===q.c){
+      b.classList.add('open','safe');b.textContent='✅';
+      opened++;document.getElementById('opened').textContent='Đã mở: '+opened;
+      if(opened>=size-mines.size)setTimeout(()=>endMine(true),300);
+    }else{
+      b.classList.add('open','mine');b.textContent='❌';
+      lives--;document.getElementById('lives').textContent='❤️ '+lives;
+      if(lives<=0)setTimeout(()=>endMine(false),400);
+    }
+  }
+  function endMine(win){
+    document.getElementById('modalBody').innerHTML=`
+      <div class="${win?'success':'fail'}" style="font-size:18px;text-align:center">${win?'🎉 Bạn đã vượt qua bãi mìn!':'💥 Hết mạng rồi. Thử lại nhé!'}</div>
+      <div class="btn-row"><button class="btn-sm btn-blue" onclick="startMine()">Chơi lại</button>
+      <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+  }
+}
+
+function startZombie(){
+  openModal('🧟 Chặn Zombie','Trả lời đúng để bắn hạ zombie!');
+  let hp=5,score=0;
+  function nextZ(){
+    if(hp<=0){
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center;font-size:18px">🏆 Bạn đã chặn thành công!<br>Điểm: ${score}</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startZombie()">Chơi lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const q=mathQ[Math.floor(Math.random()*mathQ.length)];
+    document.getElementById('modalBody').innerHTML=`
+      <div class="score-bar"><span>Zombie còn: ${hp}</span><span>Điểm: ${score}</span></div>
+      <div class="zombie-area"><div class="zombie" id="zom">🧟</div>
+      <p style="font-weight:700">Zombie đang tiến gần... Trả lời đúng để bắn!</p></div>
+      <div style="font-weight:800;margin:12px 0">${q.q}</div>
+      <div class="answers" id="ans"></div>`;
+    q.a.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='answer';
+      b.textContent=String.fromCharCode(65+i)+'. '+t;
+      b.onclick=()=>{
+        if(i===q.c){
+          document.getElementById('zom').classList.add('hit');
+          score+=10;hp--;
+          setTimeout(nextZ,500);
+        }else{
+          b.classList.add('wrong');
+          setTimeout(()=>{alert('Sai rồi! Zombie tiến thêm một bước!');nextZ()},400);
+        }
+      };
+      document.getElementById('ans').appendChild(b);
+    });
+  }
+  nextZ();
+}
+
+function startFlip(){
+  openModal('🧩 Lật Mảnh Ghép','Tìm các cặp giống nhau');
+  modalBox.classList.add('wide');
+  const pairs=['🍎','🍎','🐶','🐶','⭐','⭐','🎈','🎈','📚','📚','🌈','🌈'];
+  let cards=pairs.sort(()=>Math.random()-0.5);
+  let first=null,lock=false,matched=0;
+  let html='<div class="flip-grid" id="fg">';
+  cards.forEach((v,i)=>{
+    html+=`<div class="flip-card" data-i="${i}" data-v="${v}"><div class="flip-inner">
+      <div class="flip-front">?</div><div class="flip-back">${v}</div></div></div>`;
+  });
+  html+='</div><p id="fmsg" style="text-align:center;font-weight:700;margin-top:12px">Đã khớp: 0 / 6</p>';
+  document.getElementById('modalBody').innerHTML=html;
+  document.querySelectorAll('.flip-card').forEach(card=>{
+    card.onclick=()=>{
+      if(lock||card.classList.contains('flipped'))return;
+      card.classList.add('flipped');
+      if(!first){first=card;return}
+      lock=true;
+      if(first.dataset.v===card.dataset.v){
+        matched++;first=null;lock=false;
+        document.getElementById('fmsg').textContent='Đã khớp: '+matched+' / 6';
+        if(matched===6)document.getElementById('fmsg').innerHTML='🎉 <span class="success">Xuất sắc! Bạn đã tìm hết cặp.</span>';
+      }else{
+        setTimeout(()=>{first.classList.remove('flipped');card.classList.remove('flipped');first=null;lock=false},700);
+      }
+    };
+  });
+}
+
+const flashData=[
+  {f:'Phân số',b:'Biểu thị phần của một đơn vị'},
+  {f:'Chu vi',b:'Tổng độ dài các cạnh của hình'},
+  {f:'Diện tích',b:'Phần mặt được giới hạn bởi hình'},
+  {f:'Số tự nhiên',b:'0, 1, 2, 3, ...'},
+  {f:'Hình vuông',b:'Có 4 cạnh bằng nhau, 4 góc vuông'},
+  {f:'1 km',b:'1000 mét'}
+];
+let flashI=0,flashSide=0;
+function startFlash(){
+  flashI=0;flashSide=0;
+  openModal('📇 Thẻ lật học nhóm','Bấm vào thẻ để lật mặt');
+  renderFlash();
+}
+function renderFlash(){
+  const d=flashData[flashI];
+  document.getElementById('modalBody').innerHTML=`
+    <div class="score-bar"><span>Thẻ ${flashI+1}/${flashData.length}</span></div>
+    <div class="flash" onclick="flipFlash()">${flashSide?d.b:d.f}<br><small style="font-size:13px;opacity:.7">${flashSide?'(Định nghĩa)':'(Bấm để lật)'}</small></div>
+    <div class="btn-row" style="justify-content:center">
+      <button class="btn-sm btn-gray" onclick="flashNav(-1)">← Trước</button>
+      <button class="btn-sm btn-blue" onclick="flipFlash()">Lật thẻ</button>
+      <button class="btn-sm btn-gray" onclick="flashNav(1)">Sau →</button>
+    </div>`;
+}
+function flipFlash(){flashSide=1-flashSide;renderFlash()}
+function flashNav(d){flashI=(flashI+d+flashData.length)%flashData.length;flashSide=0;renderFlash()}
+
+function startTreasure(){
+  openModal('🗝️ Săn Kho Báu','Trả lời đúng để lấy chữ cái!');
+  const secret='HOCTAP';
+  let got=Array(secret.length).fill(false);
+  let qi=0;
+  const qs=[...mathQ].sort(()=>Math.random()-0.5);
+  function render(){
+    if(got.every(Boolean)){
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center;font-size:20px">🏆 Mật mã là: <b>${secret}</b><br>Bạn đã săn được kho báu!</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startTreasure()">Chơi lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const q=qs[qi%qs.length];
+    let letters='<div class="letter-box">';
+    secret.split('').forEach((ch,i)=>{
+      letters+=`<div class="letter ${got[i]?'got':''}">${got[i]?ch:'_'}</div>`;
+    });
+    letters+='</div>';
+    document.getElementById('modalBody').innerHTML=`
+      ${letters}
+      <div style="font-weight:800;margin:12px 0">${q.q}</div>
+      <div class="answers" id="ans"></div>`;
+    q.a.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='answer';
+      b.textContent=String.fromCharCode(65+i)+'. '+t;
+      b.onclick=()=>{
+        if(i===q.c){
+          const empty=got.findIndex(x=>!x);
+          if(empty>=0)got[empty]=true;
+          qi++;render();
+        }else{
+          b.classList.add('wrong');
+          setTimeout(()=>{qi++;render()},500);
+        }
+      };
+      document.getElementById('ans').appendChild(b);
+    });
+  }
+  render();
+}
+
+function startSequence(){
+  openModal('🚂 Đoàn Tàu Tri Thức','Kéo thả sắp xếp đúng thứ tự');
+  const items=[
+    {t:'1. Đọc đề bài',ok:0},
+    {t:'2. Xác định yêu cầu',ok:1},
+    {t:'3. Tìm cách giải',ok:2},
+    {t:'4. Thực hiện phép tính',ok:3},
+    {t:'5. Kiểm tra kết quả',ok:4}
+  ].sort(()=>Math.random()-0.5);
+  document.getElementById('modalBody').innerHTML=`
+    <p style="font-size:14px;color:#64748b;margin-bottom:10px">Kéo các toa tàu xếp theo đúng thứ tự giải bài toán:</p>
+    <div class="seq-list" id="seq"></div>
+    <div class="btn-row"><button class="btn-sm btn-blue" onclick="checkSeq()">Kiểm tra</button></div>
+    <div id="seqResult"></div>`;
+  const list=document.getElementById('seq');
+  items.forEach((it,i)=>{
+    const d=document.createElement('div');
+    d.className='seq-item';
+    d.draggable=true;
+    d.textContent=it.t;
+    d.dataset.ok=it.ok;
+    d.ondragstart=e=>{d.classList.add('dragging');e.dataTransfer.setData('text',i)};
+    d.ondragend=()=>d.classList.remove('dragging');
+    d.ondragover=e=>e.preventDefault();
+    d.ondrop=e=>{
+      e.preventDefault();
+      const from=list.querySelector('.dragging');
+      if(from&&from!==d)list.insertBefore(from,d);
+    };
+    list.appendChild(d);
+  });
+}
+function checkSeq(){
+  const nodes=[...document.querySelectorAll('#seq .seq-item')];
+  let good=true;
+  nodes.forEach((n,i)=>{if(+n.dataset.ok!==i)good=false});
+  document.getElementById('seqResult').innerHTML=good
+    ?'<div class="success">🎉 Chính xác! Đoàn tàu đã sẵn sàng xuất phát.</div>'
+    :'<div class="fail">Chưa đúng thứ tự. Hãy thử sắp xếp lại nhé!</div>';
+}
+
+function startBattle(){
+  openModal('⚔️ Game Đối Kháng','Hai người chơi thay phiên');
+  let p1=0,p2=0,turn=1,round=0;
+  const qs=[...mathQ].sort(()=>Math.random()-0.5).slice(0,6);
+  function next(){
+    if(round>=qs.length){
+      const win=p1>p2?'Người chơi 1 thắng!':p2>p1?'Người chơi 2 thắng!':'Hòa nhau!';
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center;font-size:18px">${win}<br>P1: ${p1} — P2: ${p2}</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startBattle()">Chơi lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const q=qs[round];
+    document.getElementById('modalBody').innerHTML=`
+      <div class="score-bar"><span>P1: ${p1}</span><span>P2: ${p2}</span><span>Lượt: Người ${turn}</span></div>
+      <div style="font-weight:800;margin:12px 0">${q.q}</div>
+      <div class="answers" id="ans"></div>`;
+    q.a.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='answer';
+      b.textContent=String.fromCharCode(65+i)+'. '+t;
+      b.onclick=()=>{
+        if(i===q.c){if(turn===1)p1+=10;else p2+=10;b.classList.add('correct')}
+        else b.classList.add('wrong');
+        setTimeout(()=>{turn=turn===1?2:1;if(turn===1)round++;next()},600);
+      };
+      document.getElementById('ans').appendChild(b);
+    });
+  }
+  next();
+}
+
+let timerInt=null;
+function stopAllTimers(){clearInterval(timerInt);clearInterval(speedTimer)}
+function startTimer(){
+  openModal('⏱️ Đồng hồ đếm ngược','Chọn thời gian và bắt đầu');
+  document.getElementById('modalBody').innerHTML=`
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+      <button class="btn-sm btn-blue" onclick="runTimer(30)">30 giây</button>
+      <button class="btn-sm btn-blue" onclick="runTimer(60)">1 phút</button>
+      <button class="btn-sm btn-blue" onclick="runTimer(120)">2 phút</button>
+      <button class="btn-sm btn-orange" onclick="runTimer(300)">5 phút</button>
+    </div>
+    <div class="timer-big" id="tdisp">--:--</div>
+    <div class="timer-bar"><div class="timer-fill" id="tbar" style="width:100%"></div></div>
+    <div class="btn-row" style="justify-content:center">
+      <button class="btn-sm btn-gray" onclick="stopAllTimers();document.getElementById('tdisp').textContent='--:--'">Dừng</button>
+    </div>`;
+}
+function runTimer(sec){
+  stopAllTimers();
+  let left=sec;
+  const total=sec;
+  function tick(){
+    const m=String(Math.floor(left/60)).padStart(2,'0');
+    const s=String(left%60).padStart(2,'0');
+    document.getElementById('tdisp').textContent=m+':'+s;
+    document.getElementById('tbar').style.width=(left/total*100)+'%';
+    if(left<=0){clearInterval(timerInt);document.getElementById('tdisp').textContent='HẾT GIỜ!';return}
+    left--;
+  }
+  tick();
+  timerInt=setInterval(tick,1000);
+}
+
+function startABC(){
+  openModal('🏃 Thể dục ABC','Làm động tác theo chữ + trả lời');
+  const moves=[
+    {c:'A',m:'🖐️ Giơ hai tay lên cao như chữ A'},
+    {c:'B',m:'💪 Gập tay trước ngực như chữ B'},
+    {c:'C',m:'🔄 Xoay người tạo hình chữ C'},
+    {c:'D',m:'🦵 Nhún chân tại chỗ'}
+  ];
+  let i=0;
+  function show(){
+    if(i>=moves.length){
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center">🎉 Hoàn thành chuỗi động tác!<br>Cả lớp cùng hít thở sâu nào.</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startABC()">Làm lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const m=moves[i];
+    document.getElementById('modalBody').innerHTML=`
+      <div style="text-align:center;font-size:64px;font-weight:900;color:var(--primary)">${m.c}</div>
+      <p style="text-align:center;font-size:18px;font-weight:700;margin:12px 0">${m.m}</p>
+      <p style="text-align:center;color:#64748b">Cả lớp cùng làm trong 5 giây...</p>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn-sm btn-blue" onclick="i++;show()">Xong → Tiếp</button>
+      </div>`;
+  }
+  show();
+}
+
+function startStarRace(){
+  openModal('⭐ Cuộc đua ngôi sao','Chọn đáp án nhanh để lấy sao');
+  let stars=0,qi=0;
+  const qs=[...mathQ].sort(()=>Math.random()-0.5).slice(0,5);
+  function next(){
+    if(qi>=qs.length){
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center;font-size:20px">Bạn đã lấy được ${stars} ⭐</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startStarRace()">Chơi lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const q=qs[qi];
+    document.getElementById('modalBody').innerHTML=`
+      <div class="score-bar"><span>⭐ ${stars}</span><span>Câu ${qi+1}/5</span></div>
+      <div style="font-weight:800;margin:12px 0">${q.q}</div>
+      <div class="answers" id="ans"></div>`;
+    q.a.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='answer';
+      b.textContent=String.fromCharCode(65+i)+'. '+t;
+      b.onclick=()=>{
+        if(i===q.c){stars++;b.classList.add('correct')}else b.classList.add('wrong');
+        setTimeout(()=>{qi++;next()},500);
+      };
+      document.getElementById('ans').appendChild(b);
+    });
+  }
+  next();
+}
+
+function startWordFly(){
+  openModal('🔤 Từ Ngữ Biết Bay','Chọn từ đúng để hoàn thành câu');
+  const items=[
+    {s:'Hôm nay trời rất _____ .',opts:['đẹp','đép','đẹt','đệp'],c:0},
+    {s:'Em đang _____ bài tập.',opts:['làm','lam','lảm','lăm'],c:0},
+    {s:'Con mèo _____ chuột.',opts:['bắt','bặt','bấc','bắc'],c:0},
+    {s:'Chúng em _____ nhau học tập.',opts:['giúp','giúc','giụp','giúpp'],c:0}
+  ];
+  let i=0,sc=0;
+  function next(){
+    if(i>=items.length){
+      document.getElementById('modalBody').innerHTML=`
+        <div class="success" style="text-align:center">Đúng ${sc}/${items.length} câu!</div>
+        <div class="btn-row"><button class="btn-sm btn-blue" onclick="startWordFly()">Chơi lại</button>
+        <button class="btn-sm btn-gray" onclick="closeModal()">Đóng</button></div>`;
+      return;
+    }
+    const it=items[i];
+    document.getElementById('modalBody').innerHTML=`
+      <div class="score-bar"><span>Đúng: ${sc}</span></div>
+      <div style="font-size:20px;font-weight:800;margin:16px 0;text-align:center">${it.s}</div>
+      <div class="answers" id="ans"></div>`;
+    it.opts.forEach((t,j)=>{
+      const b=document.createElement('button');
+      b.className='answer';
+      b.textContent=t;
+      b.onclick=()=>{
+        if(j===it.c){sc++;b.classList.add('correct')}else b.classList.add('wrong');
+        setTimeout(()=>{i++;next()},500);
+      };
+      document.getElementById('ans').appendChild(b);
+    });
+  }
+  next();
+}
+
+function openAdmin(e){if(e)e.preventDefault();document.getElementById('adminScreen').classList.add('open')}
+function closeAdmin(){document.getElementById('adminScreen').classList.remove('open')}
+function doLogin(){
+  const u=document.getElementById('u').value,p=document.getElementById('p').value;
+  if(u==='admin4A1'&&p==='Lop4A1@2026'){
+    document.getElementById('loginBox').style.display='none';
+    document.getElementById('dash').style.display='block';
+  }else alert('Sai tên hoặc mật khẩu');
+}
+</script>
+</body>
+</html>
