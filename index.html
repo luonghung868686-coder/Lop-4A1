@@ -27,7 +27,20 @@ main{max-width:1180px;margin:35px auto;padding:0 20px}.section{margin:42px 0}.se
 <header class="header"><nav class="nav"><a class="brand" href="#home"><span class="logo">🎒</span><span>Lớp 4A1<small>Ngôi nhà học tập vui vẻ</small></span></a><button class="menu-btn" id="menuBtn">☰</button><div class="menu" id="menu"><a class="active" href="#home">Trang chủ</a><a href="#hoclieu">Kho học liệu</a><a href="#tintuc">Tin tức</a><a href="#tailieu">Tài liệu tham khảo</a><a href="#trochoi">Trò chơi</a><a href="#vinhdanh">Vinh danh</a><a class="admin-link" href="#admin" onclick="openAdmin(event)">🔐 Quản trị</a></div></nav></header>
 <section class="hero"><div class="hero-box"><div class="hero-content"><span class="badge">🌟 Xin chào các bạn 4A1!</span><h1>Chào mừng đến với lớp 4A1</h1><p>Cùng học tập - Cùng sáng tạo - Cùng tỏa sáng</p><div class="hero-actions"><a class="btn btn-primary" href="#hoclieu">🚀 Khám phá học liệu</a><a class="btn btn-light" href="#trochoi">🎮 Chơi ngay</a></div></div></div></section>
 <section class="quick"><div class="quick-grid"><a class="quick-card" href="#hoclieu"><span class="quick-icon">📚</span><div><strong>Kho học liệu</strong><span>Học tập mỗi ngày</span></div></a><a class="quick-card" href="#trochoi"><span class="quick-icon">🎮</span><div><strong>Trò chơi</strong><span>Học mà vui</span></div></a><a class="quick-card" href="#tailieu"><span class="quick-icon">📝</span><div><strong>Ôn tập</strong><span>Tài liệu hữu ích</span></div></a><a class="quick-card" href="#vinhdanh"><span class="quick-icon">🏆</span><div><strong>Vinh danh</strong><span>Ngôi sao 4A1</span></div></a></div></section>
-<main>
+<main><div style="text-align: center; margin: 30px 0;">
+  <a href="https://giaoviendoimoi.com/tug-of-war-game" target="_blank"
+     style="background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);">
+    🎮 Chơi trò chơi: Kéo Co - Đua thuyền kiến thức
+  </a>
+</div>
 <section class="section"><div class="section-head"><div><h2>📢 Thông báo mới nhất</h2><p>Cập nhật nhanh những điều quan trọng của lớp.</p></div></div><div class="two"><div class="panel"><div class="notice"><i class="dot"></i><div><strong>Chào mừng tuần học mới!</strong><p>Hãy chuẩn bị đầy đủ sách vở và tinh thần thật vui vẻ nhé.</p></div></div><div class="notice"><i class="dot"></i><div><strong>Thử thách học tập tháng này</strong><p>Mỗi bạn hoàn thành 3 nhiệm vụ sẽ nhận một huy hiệu đặc biệt.</p></div></div><div class="notice"><i class="dot"></i><div><strong>Góc đọc sách 4A1</strong><p>Đừng quên chia sẻ một cuốn sách hay với các bạn trong lớp.</p></div></div></div><div class="panel"><h3>✨ Bài học nổi bật</h3><div class="feature"><b>Toán: Phân số</b><span>Ôn tập bằng sơ đồ và trò chơi</span></div><div class="feature"><b>Tiếng Việt: Từ ngữ và câu</b><span>Luyện tập qua thử thách nhanh</span></div><div class="feature"><b>Khoa học: Năng lượng</b><span>Khám phá thế giới quanh em</span></div></div></div></section>
 <section class="section" id="hoclieu"><div class="section-head"><div><h2>📚 Kho học liệu</h2><p>Chọn môn học và bắt đầu khám phá.</p></div><a class="view" href="#hoclieu">Xem tất cả →</a></div><div class="cards subjects">
 <div class="subject"><span class="subject-icon">➗</span><h3>Toán học</h3><p>Bài giảng, bài tập, phiếu ôn tập và thử thách tư duy.</p><button class="mini-btn" onclick="showMsg('Toán học','Kho học liệu Toán đang sẵn sàng cho bạn!')">Xem học liệu</button></div>
@@ -90,17 +103,4 @@ renderPublicData=function(d){originalRenderPublicData(d);document.querySelectorA
 document.addEventListener('DOMContentLoaded',()=>{renderPublicData(getData());if(location.hash==='#admin')openAdmin()});
 </script>
 </body></html>
-<div style="text-align: center; margin: 30px 0;">
-  <a href="https://giaoviendoimoi.com/tug-of-war-game" target="_blank"
-     style="background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);">
-    🎮 Chơi trò chơi: Kéo Co - Đua thuyền kiến thức
-  </a>
-</div>
+
